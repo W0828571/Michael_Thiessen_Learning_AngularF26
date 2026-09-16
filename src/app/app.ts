@@ -8,6 +8,4 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
 })
 export class App {
-  title =  'Learning-AngularF26';
-  name = 'Michael Thiessen'
 }
