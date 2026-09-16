@@ -8,5 +8,6 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('Michael_Thiessen_Learning_AngularF26');
+  title =  'Learning-AngularF26';
+  name = 'Michael Thiessen'
 }
