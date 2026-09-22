@@ -5,10 +5,11 @@ import { Pokemon } from './shared/models/pokemon';
 @Component({
   imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
+  styleUrl: './app.scss',
   templateUrl: './app.html',
 })
 export class App {
+  // initialized array with 6 objects
   public pokemonList: Pokemon[]= [
     {id: 1, name: 'bulbasaur', type1: 'grass', type2: 'poison', baseExperience:64},
     {id: 2, name: 'ivysaur', type1: 'grass', type2: 'poison', baseExperience:142},
