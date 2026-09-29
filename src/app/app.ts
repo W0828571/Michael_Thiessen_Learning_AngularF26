@@ -9,7 +9,8 @@ import { PokemonList } from './components/pokemon-list/pokemon-list';
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',
+  standalone: true,
 })
 export class App {
-  protected title: 'Pokemon Explorer';
+  protected title = 'Pokemon Explorer';
 }

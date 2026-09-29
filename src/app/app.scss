@@ -1,26 +1,13 @@
 // Retro pixel font from Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-$water-colour: #ADD8e6;
-
-$fire-colour: #ffa500;
-
-$grass-colour: #32CD32;
-
-// Map each Pokémon type to its colour variable
-$type-colours: (
-  water: $water-colour,
-  fire: $fire-colour,
-  grass: $grass-colour,
-);
-
 .container {
   min-height: 100vh;
   box-sizing: border-box;
   padding: 2rem 1rem;
   font-family: 'Press Start 2P', 'Courier New', monospace;
 
-  // Centre the cards and stack them vertically
+  // Centre everything and stack it vertically
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,39 +15,9 @@ $type-colours: (
   gap: 1.5rem;
 
   h2 {
-    flex-basis: 100%; // keeps the heading on its own row above the cards
     text-align: center;
     margin: 0 0 0.5rem;
     font-size: 1.5rem;
     color: #22263a;
-  }
-
-  .pokemon-card {
-    width: 220px;
-    padding: 1.25rem 1.5rem;
-    border-radius: 14px;
-    border: 3px solid currentColor;
-    box-sizing: border-box;
-    color: #22263a;
-
-    h3 {
-      margin: 0 0 0.75rem;
-      font-size: 0.8rem;
-      line-height: 1.5;
-      text-transform: capitalize;
-    }
-
-    p {
-      margin: 0.5rem 0;
-      font-size: 0.5rem;
-      line-height: 1.6;
-    }
-
-    // Creates .type-water, .type-fire, .type-grass modifiers using each type's colour
-    @each $type, $colour in $type-colours {
-      &.type-#{$type} {
-        background-color: $colour;
-      }
-    }
   }
 }

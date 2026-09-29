@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Pokemon } from '../../shared/models/pokemon';
+import { PokemonListItem} from '../pokemon-list-item/pokemon-list-item';
 
 @Component({
   imports: [],
   selector: 'app-pokemon-list',
-  styleUrl: './pokemon-list.css',
+  styleUrl: './pokemon-list.scss',
   templateUrl: './pokemon-list.html',
+  standalone: true,
 })
 export class PokemonList {
   // initialized array with 6 objects
@@ -17,5 +19,4 @@ export class PokemonList {
     { id: 5, name: 'charmeleon', type1: 'fire', baseExperience: 142 },
     { id: 6, name: 'charizard', type1: 'fire', type2: 'flying', baseExperience: 267 },
   ];
-
 }
