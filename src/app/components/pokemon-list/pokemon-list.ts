@@ -18,6 +18,7 @@ export class PokemonList {
     { id: 4, name: 'charmander', type1: 'fire', baseExperience: 62 },
     { id: 5, name: 'charmeleon', type1: 'fire', baseExperience: 142 },
     { id: 6, name: 'charizard', type1: 'fire', type2: 'flying', baseExperience: 267 },
+    {id: 7, name: 'dragonite', type1: 'dragon', type2: 'flying', baseExperience: 3000}
   ];
 
   // Let the parent component react to a card being opened
