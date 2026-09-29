@@ -1,13 +1,3 @@
-$water-colour: #ADD8E6;
-$fire-colour: #FFA500;
-$grass-colour: #32CD32;
-
-// Map each Pokémon type to its colour variable
-$type-colours: (
-  water: $water-colour,
-  fire: $fire-colour,
-  grass: $grass-colour,
-);
 
 // Stack the cards vertically with spacing
 .list {
@@ -17,31 +7,4 @@ $type-colours: (
   gap: 1.5rem;
 }
 
-.pokemon-card {
-  width: 220px;
-  padding: 1.25rem 1.5rem;
-  border-radius: 14px;
-  border: 3px solid currentColor;
-  box-sizing: border-box;
-  color: #22263a;
 
-  h3 {
-    margin: 0 0 0.75rem;
-    font-size: 0.8rem;
-    line-height: 1.5;
-    text-transform: capitalize;
-  }
-
-  p {
-    margin: 0.5rem 0;
-    font-size: 0.5rem;
-    line-height: 1.6;
-  }
-
-  // Creates .type-water, .type-fire, .type-grass modifiers using each type's colour
-  @each $type, $colour in $type-colours {
-    &.type-#{$type} {
-      background-color: $colour;
-    }
-  }
-}

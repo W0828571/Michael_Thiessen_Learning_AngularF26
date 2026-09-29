@@ -1,29 +1,10 @@
 <div class="pokemon-list">
   <!-- for loop to iterate over the array with track expression -->
   @for (pokemon of pokemonList; track pokemon.id) {
-    <div class="pokemon-card" [class]="'pokemon-card type-' + pokemon.type1">
-      <h3>#{{ pokemon.id }} {{ pokemon.name }}</h3>
-
-      <!-- switch to display a different badge depending on whether the pokemon has a second type -->
-      @switch (!!pokemon.type2) {
-        <!-- case 1: the pokemon has a second type -->
-        @case (true) {
-          <span class="badge badge-dual">Dual Type</span>
-        }
-        <!-- default: the pokemon does not have a second type -->
-        @default {
-          <span class="badge badge-single">Mono Type</span>
-        }
-      }
-      <p>Type 1: {{ pokemon.type1 }}</p>
-      <!-- if/else to display the optional second type only when it has a value -->
-      @if (pokemon.type2) {
-        <p>Type 2: {{ pokemon.type2 }}</p>
-      } @else {
-        <p></p>
-      }
-      <p>Base Experience: {{ pokemon.baseExperience }}</p>
-    </div>
+    <app-pokemon-list-item
+      [pokemon]="pokemon"
+      (opened)="onPokemonOpened($event)"
+    ></app-pokemon-list-item>
   } @empty {
     <!-- empty in case the array is ever empty -->
     <p>No Pokémon to display.</p>

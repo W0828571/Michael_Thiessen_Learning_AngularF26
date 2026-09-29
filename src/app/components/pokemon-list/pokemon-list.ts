@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Pokemon } from '../../shared/models/pokemon';
-import { PokemonListItem} from '../pokemon-list-item/pokemon-list-item';
+import { PokemonListItem } from '../pokemon-list-item/pokemon-list-item';
 
 @Component({
-  imports: [],
+  imports: [PokemonListItem],
   selector: 'app-pokemon-list',
   styleUrl: './pokemon-list.scss',
   templateUrl: './pokemon-list.html',
@@ -19,4 +19,10 @@ export class PokemonList {
     { id: 5, name: 'charmeleon', type1: 'fire', baseExperience: 142 },
     { id: 6, name: 'charizard', type1: 'fire', type2: 'flying', baseExperience: 267 },
   ];
+
+  // Let the parent component react to a card being opened
+  onPokemonOpened(pokemon: Pokemon): void {
+    //Place holder for now
+    console.warn('Opened: ', pokemon.name);
+  }
 }

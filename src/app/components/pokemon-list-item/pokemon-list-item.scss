@@ -1,0 +1,71 @@
+$water-colour: #ADD8E6;
+$fire-colour: #FFA500;
+$grass-colour: #32CD32;
+$normal-colour;
+$electric-colour;
+$ice-colour;
+$fighting-colour;
+$poison-colour;
+$ground-colour;
+$flying-colour;
+$psychic-colour;
+$bug-colour;
+$rock-colour;
+$ghost-colour;
+$dragon-colour;
+$dark-colour;
+$steel-colour;
+$fairy-colour;
+
+
+
+// Map each Pokémon type to its colour variable
+$type-colours: (
+  water: $water-colour,
+  fire: $fire-colour,
+  grass: $grass-colour,
+  normal: $normal-colour,
+  electric: $electric-colour,
+  ice: $ice-colour,
+  fighting: $fighting-colour,
+  poison: $poison-colour,
+  ground: $ground-colour,
+  flying: $flying-colour,
+  psychic: $psychic-colour,
+  bug: $bug-colour,
+  rock: $rock-colour,
+  ghost: $ghost-colour,
+  dragon: $dragon-colour,
+  dark: $dark-colour,
+  steel: $steel-colour,
+  fairy: $fairy-colour
+);
+
+.pokemon-card {
+  width: 220px;
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  border: 3px solid currentColor;
+  box-sizing: border-box;
+  color: #22263a;
+
+  h3 {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-transform: capitalize;
+  }
+
+  p, span{
+    margin: 0.5rem 0;
+    font-size: 0.5rem;
+    line-height: 1.6;
+  }
+
+  // Creates .type-water, .type-fire, .type-grass modifiers using each type's colour
+  @each $type, $colour in $type-colours {
+    &.type-#{$type} {
+      background-color: $colour;
+    }
+  }
+}
