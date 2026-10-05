@@ -12,5 +12,5 @@ import { PokemonList } from './components/pokemon-list/pokemon-list';
   standalone: true,
 })
 export class App {
-  protected title = 'Pokemon Explorer';
+  protected title = 'Pokemon List';
 }

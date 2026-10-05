@@ -9,6 +9,7 @@ import { PokemonListItem } from '../pokemon-list-item/pokemon-list-item';
   templateUrl: './pokemon-list.html',
   standalone: true,
 })
+
 export class PokemonList {
   // initialized array with 6 objects
   public pokemonList: Pokemon[] = [
@@ -23,7 +24,7 @@ export class PokemonList {
 
   // Let the parent component react to a card being opened
   onPokemonOpened(pokemon: Pokemon): void {
-    //Place holder for now
+
     console.warn('Opened: ', pokemon.name);
   }
 }

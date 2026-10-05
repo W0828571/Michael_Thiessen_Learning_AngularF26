@@ -6,13 +6,12 @@ import { Pokemon } from '../../shared/models/pokemon';
   selector: 'app-pokemon-list-item',
   styleUrl: './pokemon-list-item.scss',
   templateUrl: './pokemon-list-item.html',
-
   standalone: true,
 })
-export class PokemonListItem {
-  pokemon = input.required<Pokemon>();
-  //Two way data binding
 
+export class PokemonListItem {
+  //Twoway data binding
+  pokemon = input.required<Pokemon>();
   //Boolean to track if the card was clicked on
   expanded = false;
   opened = output<Pokemon>();
