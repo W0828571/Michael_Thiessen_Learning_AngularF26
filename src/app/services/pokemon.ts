@@ -1,0 +1,21 @@
+import { computed, Service, signal } from '@angular/core';
+import { Pokemon } from '../shared/models/pokemon';
+
+@Service()
+export class PokemonService {
+  private pokemonList = (signal<Pokemon[]> = [
+    { id: 1, name: 'bulbasaur', type1: 'grass', type2: 'poison', baseExperience: 64 },
+    { id: 2, name: 'ivysaur', type1: 'grass', type2: 'poison', baseExperience: 142 },
+    { id: 3, name: 'venusaur', type1: 'grass', type2: 'poison', baseExperience: 236 },
+    { id: 4, name: 'charmander', type1: 'fire', baseExperience: 62 },
+    { id: 5, name: 'charmeleon', type1: 'fire', baseExperience: 142 },
+    { id: 6, name: 'charizard', type1: 'fire', type2: 'flying', baseExperience: 267 },
+    { id: 7, name: 'dragonite', type1: 'dragon', type2: 'flying', baseExperience: 3000 },
+  ]);
+  pokemonList = this.pokemonList.asReadonly();
+  pokemonCount = computed(() => this.pokemonList().length);
+
+  addPokemon(p: Pokemon): void {
+    this.pokemonList.update((list) => [...list, p]);
+  }
+}
