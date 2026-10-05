@@ -3,7 +3,7 @@ import { Pokemon } from '../shared/models/pokemon';
 
 @Service()
 export class PokemonService {
-  private pokemonList = (signal<Pokemon[]> = [
+  private listOfPokemon = signal<Pokemon[]>([
     { id: 1, name: 'bulbasaur', type1: 'grass', type2: 'poison', baseExperience: 64 },
     { id: 2, name: 'ivysaur', type1: 'grass', type2: 'poison', baseExperience: 142 },
     { id: 3, name: 'venusaur', type1: 'grass', type2: 'poison', baseExperience: 236 },
@@ -12,10 +12,6 @@ export class PokemonService {
     { id: 6, name: 'charizard', type1: 'fire', type2: 'flying', baseExperience: 267 },
     { id: 7, name: 'dragonite', type1: 'dragon', type2: 'flying', baseExperience: 3000 },
   ]);
-  pokemonList = this.pokemonList.asReadonly();
+  pokemonList = this.listOfPokemon.asReadonly();
   pokemonCount = computed(() => this.pokemonList().length);
-
-  addPokemon(p: Pokemon): void {
-    this.pokemonList.update((list) => [...list, p]);
-  }
 }

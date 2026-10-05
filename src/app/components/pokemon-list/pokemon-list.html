@@ -1,6 +1,6 @@
 <div class="pokemon-list">
   <!-- for loop to iterate over the array with track expression -->
-  @for (pokemon of pokemonList; track pokemon.id) {
+  @for (pokemon of pokemonList(); track pokemon.id) {
     <app-pokemon-list-item
       [pokemon]="pokemon"
       (opened)="onPokemonOpened($event)"

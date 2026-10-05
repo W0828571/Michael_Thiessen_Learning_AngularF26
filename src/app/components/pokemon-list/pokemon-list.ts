@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Pokemon } from '../../shared/models/pokemon';
 import { PokemonListItem } from '../pokemon-list-item/pokemon-list-item';
+import { PokemonService } from '../../services/pokemon';
 
 @Component({
   imports: [PokemonListItem],
@@ -11,10 +12,10 @@ import { PokemonListItem } from '../pokemon-list-item/pokemon-list-item';
 })
 
 export class PokemonList {
+  private pokemonService = inject(PokemonService);
 
-  // Let the parent component react to a card being opened
-  onPokemonOpened(pokemon: Pokemon): void {
-
-    console.warn('Opened: ', pokemon.name);
+  protected pokemonList = this.pokemonService.pokemonList
+  protected onPokemonOpened(pokemon: Pokemon): void {
+    console.log('Opened: ', pokemon.name);
   }
 }
