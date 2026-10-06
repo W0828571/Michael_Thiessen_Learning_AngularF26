@@ -1,10 +1,12 @@
-<p class="count">Total Pokémon: {{ pokemonCount() }}</p>
+
+<p class="count">Total Pokemon: {{ pokemonCount() }}</p>
 
 <div class="list">
   @for (pokemon of pokemonList(); track pokemon.id) {
     <app-pokemon-list-item
       [pokemon]="pokemon"
       (opened)="onPokemonOpened($event)"
+      (removed)="onPokemonRemoved($event)"
     ></app-pokemon-list-item>
   } @empty {
     <p>No Pokémon to display.</p>
@@ -13,6 +15,7 @@
 <br>
 
 <h2 class="listTitle">Dual Type Pokemon List</h2>
+<p class="count">Dual Type Pokemon: {{ dualTypeCount() }}</p>
 <br>
 
 <div class="list">
@@ -20,6 +23,7 @@
     <app-pokemon-list-item
       [pokemon]="pokemon"
       (opened)="onPokemonOpened($event)"
+      (removed)="onPokemonRemoved($event)"
     ></app-pokemon-list-item>
   } @empty {
     <p>No Pokémon to display.</p>
