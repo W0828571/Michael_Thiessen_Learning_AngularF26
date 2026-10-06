@@ -10,11 +10,11 @@ import { PokemonService } from '../../services/pokemon';
   templateUrl: './pokemon-list.html',
   standalone: true,
 })
-
 export class PokemonList {
   private pokemonService = inject(PokemonService);
-
-  protected pokemonList = this.pokemonService.pokemonList
+  protected pokemonList = this.pokemonService.pokemonList;
+  protected pokemonCount = this.pokemonService.pokemonCount;
+  protected dualTypePokemonList = this.pokemonService.dualTypePokemon;
   protected onPokemonOpened(pokemon: Pokemon): void {
     console.log('Opened: ', pokemon.name);
   }

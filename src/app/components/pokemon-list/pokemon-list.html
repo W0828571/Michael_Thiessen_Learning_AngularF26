@@ -1,13 +1,27 @@
-<div class="pokemon-list">
-  <!-- for loop to iterate over the array with track expression -->
+<p class="count">Total Pokémon: {{ pokemonCount() }}</p>
+
+<div class="list">
   @for (pokemon of pokemonList(); track pokemon.id) {
     <app-pokemon-list-item
       [pokemon]="pokemon"
       (opened)="onPokemonOpened($event)"
     ></app-pokemon-list-item>
-    <p></p>
   } @empty {
-    <!-- empty in case the array is ever empty -->
+    <p>No Pokémon to display.</p>
+  }
+</div>
+<br>
+
+<h2 class="listTitle">Dual Type Pokemon List</h2>
+<br>
+
+<div class="list">
+  @for (pokemon of dualTypePokemonList(); track pokemon.id) {
+    <app-pokemon-list-item
+      [pokemon]="pokemon"
+      (opened)="onPokemonOpened($event)"
+    ></app-pokemon-list-item>
+  } @empty {
     <p>No Pokémon to display.</p>
   }
 </div>

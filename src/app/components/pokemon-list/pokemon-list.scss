@@ -1,4 +1,12 @@
 
+
+// Centre the component
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
 // Stack the cards vertically with spacing
 .list {
   display: flex;
@@ -6,5 +14,10 @@
   align-items: center;
   gap: 1.5rem;
 }
-
+.listTitle {
+  text-align: center;
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #22263a;
+}
 
