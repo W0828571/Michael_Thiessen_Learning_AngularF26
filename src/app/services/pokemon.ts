@@ -17,6 +17,8 @@ export class PokemonService {
 
   dualTypePokemon = computed(() => this.pokemonList().filter((p) => p.type2));
   dualTypePokemonCount = computed(() => this.dualTypePokemon().length);
+
+
   addPokemon(p: Pokemon): void {
     this.listOfPokemon.update((list) => [...list, p]);
   }

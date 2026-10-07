@@ -19,7 +19,7 @@ export class PokemonList {
   constructor() {
     // Runs once on creation, then again every time pokemonCount changes
     effect(() => {
-      console.log(`Pokémon count is now: ${this.pokemonCount()}`);
+      console.log(`Pokemon count is now: ${this.pokemonCount()}`);
     });
   }
   protected onPokemonOpened(pokemon: Pokemon): void {

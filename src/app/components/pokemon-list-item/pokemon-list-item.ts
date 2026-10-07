@@ -10,7 +10,7 @@ import { Pokemon } from '../../shared/models/pokemon';
 })
 export class PokemonListItem {
   pokemon = input.required<Pokemon>();
-  //Boolean to track if the card was clicked on
+  //Boolean to track if the card was clicked o*n
   expanded = false;
   opened = output<Pokemon>();
   removed = output<number>();
@@ -20,8 +20,6 @@ export class PokemonListItem {
   }
 
   remove(event: MouseEvent): void {
-    // stop the click from bubbling up to the card's (click)="toggle()"
-    event.stopPropagation();
     this.removed.emit(this.pokemon().id);
   }
 }
