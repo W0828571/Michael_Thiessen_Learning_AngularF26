@@ -18,7 +18,6 @@ export class PokemonListItem {
     this.expanded = !this.expanded;
     this.opened.emit(this.pokemon());
   }
-
   remove(event: MouseEvent): void {
     this.removed.emit(this.pokemon().id);
   }
